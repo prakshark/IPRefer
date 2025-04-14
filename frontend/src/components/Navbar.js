@@ -9,6 +9,7 @@ import {
   Menu,
   MenuItem,
   Box,
+  Link
 } from '@mui/material';
 import {
   AccountCircle,
@@ -43,7 +44,9 @@ function Navbar({ user, setUser }) {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          IP Protection System
+          <Link component={RouterLink} to="/" color="inherit" underline="none">
+            IPRefer
+          </Link>
         </Typography>
         {user ? (
           <>
@@ -87,6 +90,13 @@ function Navbar({ user, setUser }) {
                 startIcon={<Notifications />}
               >
                 Notifications
+              </Button>
+              <Button
+                color="inherit"
+                component={RouterLink}
+                to="/add-ip"
+              >
+                Add IP
               </Button>
               <IconButton
                 size="large"

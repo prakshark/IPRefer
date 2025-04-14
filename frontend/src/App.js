@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
-
-// Components
+import Navbar from './components/Navbar';
+import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
+import AddIP from './components/AddIP';
+import PrivateRoute from './components/PrivateRoute';
 import Dashboard from './components/Dashboard';
 
 // Create theme
@@ -37,37 +39,19 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
+        <Navbar />
         <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login setUser={setUser} />} />
+              <Route path="/register" element={<Register setUser={setUser} />} />
               <Route
-                path="/"
+                path="/add-ip"
                 element={
-                  user ? (
-                    <Navigate to="/dashboard" replace />
-                  ) : (
-                    <Navigate to="/login" replace />
-                  )
-                }
-              />
-              <Route
-                path="/login"
-                element={
-                  user ? (
-                    <Navigate to="/dashboard" replace />
-                  ) : (
-                    <Login setUser={setUser} />
-                  )
-                }
-              />
-              <Route
-                path="/register"
-                element={
-                  user ? (
-                    <Navigate to="/dashboard" replace />
-                  ) : (
-                    <Register setUser={setUser} />
-                  )
+                  <PrivateRoute>
+                    <AddIP />
+                  </PrivateRoute>
                 }
               />
               <Route
