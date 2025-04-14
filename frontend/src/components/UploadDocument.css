@@ -1,0 +1,103 @@
+.upload-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.upload-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #444;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.error-message {
+  color: #dc3545;
+  padding: 0.5rem;
+  background-color: #f8d7da;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.similar-documents {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #fff3cd;
+  border-radius: 4px;
+}
+
+.similar-documents h3 {
+  color: #856404;
+  margin-bottom: 0.5rem;
+}
+
+.similar-documents ul {
+  list-style: none;
+  padding: 0;
+}
+
+.similar-documents li {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ffeeba;
+}
+
+.similar-documents li:last-child {
+  border-bottom: none;
+}
+
+.similar-documents p {
+  margin: 0.25rem 0;
+  color: #856404;
+}
+
+button {
+  padding: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+} 
